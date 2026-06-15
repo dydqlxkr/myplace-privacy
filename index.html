@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보처리방침 — 나만의 지도 (MyMap)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #1a1a1a;
+      background: #fafaf8;
+      padding: 32px 16px 80px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111;
+    }
+    .meta {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    p {
+      margin-bottom: 12px;
+      color: #333;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+    li {
+      margin-bottom: 6px;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px;
+      font-size: 14px;
+    }
+    th {
+      background: #f4f4f0;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid #ddd;
+    }
+    td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    a { color: #4a7c59; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .highlight-box {
+      background: #f7f9f7;
+      border-left: 3px solid #6a9e78;
+      padding: 14px 16px;
+      border-radius: 4px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #444;
+    }
+    .contact {
+      margin-top: 32px;
+      padding: 20px;
+      background: #f4f4f0;
+      border-radius: 12px;
+    }
+    .contact p { margin: 0; color: #444; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>개인정보처리방침</h1>
+  <div class="meta">
+    앱명: 나만의 지도 (MyMap) &nbsp;|&nbsp;
+    패키지: io.launchings.mymap &nbsp;|&nbsp;
+    개발자: 류용탁 &nbsp;|&nbsp;
+    최종 수정일: 2026년 6월 11일
+  </div>
+
+  <h2>1. 개요</h2>
+  <p>나만의 지도(이하 "앱")는 광고 없이, 계정 가입 없이, 내 핀만 보이는 개인 지도 메모 서비스입니다.</p>
+  <div class="highlight-box">
+    앱은 로컬 퍼스트(local-first) 구조로 설계되어, 사용자의 핀 데이터·사진·메모 등 개인 기록은
+    기기 내 SQLite 데이터베이스에만 저장됩니다. 개발자 서버에 계정 정보나 개인 데이터를 저장하지 않습니다.
+  </div>
+
+  <h2>2. 수집·처리하는 정보</h2>
+
+  <h3>2-1. 기기에서만 사용하는 정보 (외부 전송 없음)</h3>
+  <table>
+    <thead>
+      <tr><th>항목</th><th>목적</th><th>저장 위치</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>핀 데이터 (이름, 좌표, 메모, 태그, 주소, 카테고리 등)</td>
+        <td>지도 위 장소 기록</td>
+        <td>기기 내 SQLite DB</td>
+      </tr>
+      <tr>
+        <td>첨부 사진</td>
+        <td>핀에 연결된 이미지 표시</td>
+        <td>기기 내 앱 도큐먼트 디렉토리</td>
+      </tr>
+      <tr>
+        <td>현재 위치 (위도·경도)</td>
+        <td>"내 위치" 버튼 동작 시 지도 중앙 이동</td>
+        <td>기기 메모리 (저장 안 됨)</td>
+      </tr>
+      <tr>
+        <td>앱 설정 (테마 등)</td>
+        <td>사용자 환경설정 유지</td>
+        <td>기기 내 SharedPreferences</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>현재 위치는 사용자가 "내 위치" 기능을 명시적으로 사용할 때만 일시적으로 읽히며,
+  앱 서버나 외부 서비스에 전송되지 않고, 기기 내에도 저장되지 않습니다.</p>
+  <p>첨부 사진은 갤러리에서 선택한 이미지를 앱의 비공개 저장 공간에 복사하여 저장합니다.
+  원본 갤러리 파일을 수정하거나 외부로 전송하지 않습니다.</p>
+
+  <h3>2-2. 외부 서버로 전송되는 정보</h3>
+  <p>앱은 장소(상호명) 검색 기능을 위해 다음 정보를 개발자가 운영하는 Cloudflare Worker 프록시를 통해
+  네이버 지역 검색 API로 전달합니다.</p>
+  <table>
+    <thead>
+      <tr><th>항목</th><th>목적</th><th>전송 대상</th><th>서버 저장 여부</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>장소 검색어 (사용자 입력 키워드)</td>
+        <td>네이버 지역검색 API 호출</td>
+        <td>Cloudflare Worker 프록시 → 네이버 검색 API</td>
+        <td>저장 안 됨 (통과만)</td>
+      </tr>
+      <tr>
+        <td>기기 식별자 (UUID, 앱 설치 시 기기 내에서 생성)</td>
+        <td>일일 검색 한도 관리 (남용 방지)</td>
+        <td>Cloudflare Worker KV</td>
+        <td>임시 카운터 (36시간 후 자동 만료)</td>
+      </tr>
+    </tbody>
+  </table>
+  <ul>
+    <li>검색어와 기기 식별자는 검색 품질 분석, 마케팅, 타사 판매 등 다른 목적으로 사용하지 않습니다.</li>
+    <li>기기 식별자(UUID)는 계정 식별이나 개인 신원 파악에 사용하지 않습니다.</li>
+    <li>검색 결과 원본은 서버에 캐싱·저장하지 않습니다. 사용자가 선택한 장소의 이름·좌표만 핀으로 기기에 저장됩니다.</li>
+  </ul>
+  <p>장소 검색 기능을 사용하지 않는 경우(롱프레스로 직접 핀 추가 등), 외부 전송이 발생하지 않습니다.</p>
+
+  <h3>2-3. 네이버 지도 SDK</h3>
+  <p>앱은 지도 표시를 위해 네이버 클라우드 플랫폼(NCP) Maps SDK를 사용합니다.
+  SDK가 지도 타일 로드 및 서비스 운영을 위해 수집하는 데이터(기기 정보, IP 주소, 사용 통계 등)는
+  네이버 클라우드 플랫폼의 개인정보처리방침을 따릅니다.</p>
+  <p>네이버 클라우드 플랫폼 개인정보처리방침:
+    <a href="https://www.ncloud.com/policy/privacy" target="_blank" rel="noopener">https://www.ncloud.com/policy/privacy</a>
+  </p>
+
+  <h2>3. 앱이 요청하는 권한</h2>
+  <table>
+    <thead>
+      <tr><th>권한</th><th>필요한 이유</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>인터넷 (INTERNET)</td>
+        <td>지도 타일 로드, 장소 검색 프록시 호출</td>
+      </tr>
+      <tr>
+        <td>정밀 위치 (ACCESS_FINE_LOCATION)</td>
+        <td>"내 위치" 버튼으로 현재 위치를 지도에 표시</td>
+      </tr>
+      <tr>
+        <td>대략적 위치 (ACCESS_COARSE_LOCATION)</td>
+        <td>위치 권한의 보조 수단</td>
+      </tr>
+      <tr>
+        <td>미디어 이미지 읽기 (READ_MEDIA_IMAGES 등)</td>
+        <td>핀에 갤러리 사진 첨부 시</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>위치 권한과 사진 읽기 권한은 사용자가 해당 기능을 처음 사용할 때 명시적으로 요청하며,
+  거부해도 앱의 기본 기능(핀 추가·관리·지도 보기)은 정상 동작합니다.</p>
+
+  <h2>4. 공유 기능</h2>
+  <p>앱은 핀 정보를 다른 앱이나 사람에게 공유하는 기능을 제공합니다.
+  공유 시 전송되는 내용(핀 이름, 주소, 좌표, 네이버 지도 링크, 앱 간 전송 토큰)은
+  사용자가 공유 버튼을 누르는 시점에 OS 공유 시트를 통해 전달됩니다.
+  이 과정에서 개발자 서버에 데이터가 전송되지 않습니다.</p>
+  <p>단, "한 번에 받기 링크" 기능은 핀 데이터를 base64 인코딩하여 Cloudflare Worker
+  단축 URL 서비스를 통해 짧은 링크로 변환합니다. 이 경우 핀의 이름·좌표·주소 등이
+  링크 생성을 위해 프록시 서버를 경유합니다. 원본 데이터는 단축 링크의 키로만 일시 저장되며,
+  개인 식별이나 분석에 사용하지 않습니다.</p>
+
+  <h2>5. 제3자 공유</h2>
+  <p>개발자는 사용자 데이터를 광고주, 분석 서비스, 또는 제3자에게 판매하거나 공유하지 않습니다.
+  앱에는 광고 SDK, 분석 SDK, 소셜 로그인 SDK가 포함되어 있지 않습니다.</p>
+
+  <h2>6. 데이터 삭제</h2>
+  <p>앱의 모든 핀 데이터와 사진은 기기에 저장됩니다.
+  앱을 삭제하면 앱과 관련된 모든 데이터가 기기에서 함께 삭제됩니다.
+  개발자 서버에 저장된 개인 데이터가 없으므로 별도의 서버 삭제 요청이 필요하지 않습니다.</p>
+  <p>기기 식별자(UUID)는 Cloudflare Worker KV에 일일 검색 카운터로 36시간간 임시 보관됩니다.
+  이 카운터는 검색 횟수만 기록하며, 이름·연락처 등 개인 정보를 포함하지 않습니다.
+  삭제 요청은 아래 연락처로 문의 바랍니다.</p>
+
+  <h2>7. 어린이 개인정보</h2>
+  <p>앱은 만 13세 미만 아동을 대상으로 설계하지 않았으며,
+  아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+
+  <h2>8. 보안</h2>
+  <p>앱 내 데이터는 기기의 앱 비공개 저장 공간에 보관됩니다.
+  외부 전송이 발생하는 경우(검색 프록시)에는 HTTPS를 사용합니다.</p>
+
+  <h2>9. 개인정보처리방침 변경</h2>
+  <p>방침이 변경될 경우 이 페이지를 통해 고지합니다.
+  중요한 변경이 있는 경우 앱 업데이트 노트에도 안내합니다.</p>
+
+  <h2>10. 문의</h2>
+  <div class="contact">
+    <p>개인정보 관련 문의사항은 아래 이메일로 연락해 주세요.</p>
+    <p style="margin-top:8px;">이메일: <a href="mailto:dydqlxkr@gmail.com">dydqlxkr@gmail.com</a></p>
+    <p>개발자: 류용탁</p>
+  </div>
+
+</div>
+</body>
+</html>
